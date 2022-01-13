@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "run-p -l type-check:watch start:dev",
+    "start": "run-p -l type-check:watch start:dev start:mock-server",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "start:dev": "webpack-dev-server --mode development --open",
+    "start:mock-server": "cd ./server && npm start",
     "build": "rimraf dist && webpack --mode development"
   },
   "author": "",
@@ -21,6 +22,7 @@
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.7",
     "babel-loader": "^8.1.0",
+    "dotenv-webpack": "^7.0.3",
     "file-loader": "^6.0.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.2.1",
