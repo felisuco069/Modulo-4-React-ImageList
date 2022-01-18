@@ -7,7 +7,7 @@
     },
     {
       "id": 2,
-      "picUrl": "/assets/images/cacniche.jpg",
+      "picUrl": "/assets/images/caniche.jpg",
       "title": "Caniche"
     },
     {
@@ -17,7 +17,7 @@
     },
     {
       "id": 4,
-      "picUrl": "/assets/images/Chow-Chow.jpg",
+      "picUrl": "/assets/images/Chow_Chow.jpg",
       "title": "Chow-Chow"
     },
     {
@@ -59,6 +59,68 @@
       "id": 12,
       "picUrl": "/assets/images/Short-haired-Dachshund.jpg",
       "title": "Dachshund"
+    }
+  ],
+  "catsList": [
+    {
+      "id": 1,
+      "picUrl": "/assets/images/Egyptian Mau.jpg",
+      "title": "Egyptian Mau"
+    },
+    {
+      "id": 2,
+      "picUrl": "/assets/images/gato balinés.jpg",
+      "title": "Gato Balinés"
+    },
+    {
+      "id": 3,
+      "picUrl": "/assets/images/gato ragdoll.jpg",
+      "title": "Gato Ragdoll"
+    },
+    {
+      "id": 4,
+      "picUrl": "/assets/images/gato_esfinge.jpg",
+      "title": "Gato Esfinge"
+    },
+    {
+      "id": 5,
+      "picUrl": "/assets/images/gato-bosque-de-Noruega.jpg",
+      "title": "Gato Bosque De Noruega"
+    },
+    {
+      "id": 6,
+      "picUrl": "/assets/images/gato-devon-rex.jpg",
+      "title": "Gato Devon Rex"
+    },
+    {
+      "id": 7,
+      "picUrl": "/assets/images/gato-exotico.jpg",
+      "title": "Gato Exótico"
+    },
+    {
+      "id": 8,
+      "picUrl": "/assets/images/gato-habana.jpg",
+      "title": "Gato Habana"
+    },
+    {
+      "id": 9,
+      "picUrl": "/assets/images/gato-himalayo.jpg",
+      "title": "Gato Himalayo"
+    },
+    {
+      "id": 10,
+      "picUrl": "/assets/images/gato-manx.jpg",
+      "title": "Gato Manx"
+    },
+    {
+      "id": 11,
+      "picUrl": "/assets/images/gato-somalí.jpg",
+      "title": "Gato Somalí"
+    },
+    {
+      "id": 12,
+      "picUrl": "/assets/images/oriental pelo corto.jpg",
+      "title": "Gato Oriental Pelo Corto"
     }
   ]
 }

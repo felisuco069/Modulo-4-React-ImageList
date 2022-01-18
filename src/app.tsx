@@ -1,15 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ListPage } from "./list";
-import { DetailPage } from "./detail";
+import { DogsPage } from "./dogs-list";
+import { CatsPage } from "./cats-list";
+// import { CartList } from "cart-list";
 
 export const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<ListPage />} />
-        <Route path="/detail/:id" element={<DetailPage />} />
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<DogsPage />} />
+          <Route path="/cats" element={<CatsPage />} />
+        </Routes>
+      </Router>
+      {/* <CartList /> */}
+    </>
   );
 };
