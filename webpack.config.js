@@ -1,12 +1,20 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const path = require("path");
-const basePath = __dirname;
 const Dotenv = require("dotenv-webpack");
+const helpers = require("./helpers")
 
 module.exports = {
-  context: path.join(basePath, "src"),
+  context: helpers.resolveFromRootPath("src"),
   resolve: {
     extensions: [".js", ".ts", ".tsx"],
+    alias: {
+      core: helpers.resolveFromRootPath("src/core"),
+      commonApp: helpers.resolveFromRootPath("src/commonApp"),
+      layaut: helpers.resolveFromRootPath("src/layaut"),
+      router: helpers.resolveFromRootPath("src/router"),
+      scenes: helpers.resolveFromRootPath("src/scenes"),
+      pods: helpers.resolveFromRootPath("src/pods")
+
+    }
   },
   devtool: "eval-source-map",
   entry: {

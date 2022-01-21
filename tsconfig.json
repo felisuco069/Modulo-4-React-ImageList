@@ -12,5 +12,14 @@
     "suppressImplicitAnyIndexErrors": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "baseUrl": "./src/",
+    "paths": {
+      "core": ["core"],
+      "commonApp": ["commonApp"],
+      "layaut": ["layaut"],
+      "router": ["router"],
+      "scenes": ["scenes"],
+      "pods": ["pods"]
+    }
   }
 }
