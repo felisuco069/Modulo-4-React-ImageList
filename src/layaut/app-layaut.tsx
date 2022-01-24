@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
 import { HeaderPage } from "commonApp/components/header.page";
-import { CartList } from "scenes/cart.scene";
+import { CartScene } from "scenes/cart.scene";
 
 const appUseStyles = makeStyles(() => ({
   root: {
@@ -36,7 +36,7 @@ export const AppLayaut = ({ children }) => {
       <div className={classes.container}>
         <main className={classes.main}>{children}</main>
         <div className={classes.cart}>
-          <CartList />
+          <CartScene />
         </div>
       </div>
     </div>

@@ -36,20 +36,23 @@ const cartUseStyles = makeStyles(() => ({
 
 export const GetCard = (props: Props) => {
   const { pet } = props;
-  const [state, setState] = React.useState(pet.selected);
+  const [state, setState] = React.useState(pet);
   const { cartList, setCartList } = React.useContext(MyContext);
   const classes = cartUseStyles();
 
   const handleClick = () => {
-    setState(!state);
-    pet.selected = !pet.selected;
+    setState({ ...state, selected: !state.selected });
+    setCartList([...cartList, pet]);
   };
-
   return (
     <Card className={classes.root}>
       <div className={classes.title}>
         <CardHeader title={pet.title} />
-        <input type="checkbox" checked={state} onChange={handleClick} />
+        <input
+          type="checkbox"
+          checked={state.selected}
+          onChange={handleClick}
+        />
         <span>Buy</span>
       </div>
       <CardMedia
