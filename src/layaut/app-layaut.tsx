@@ -11,16 +11,13 @@ const appUseStyles = makeStyles(() => ({
   },
   container: {
     display: "flex",
-    flexWrap: "wrap",
-    width: "100vw",
   },
   main: {
-    width: "60vw",
     borderRight: "3px solid black;",
     boxSizing: "border-box",
   },
   cartContainer: {
-    width: "40vw",
+    width: "180vw",
     boxSizing: "border-box",
   },
 }));

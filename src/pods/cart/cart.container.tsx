@@ -6,10 +6,14 @@ import { CartCardComponent } from "./cartCardComponent";
 import { ResetButton } from "./reset.button";
 
 const carttUseStyles = makeStyles(() => ({
-  cartList: {
+  cart: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+  },
+  component: {
+    display: "flex",
+    flexWrap: "wrap",
   },
 }));
 
@@ -19,10 +23,12 @@ export const CartListContainer = () => {
   const classes = carttUseStyles();
 
   return (
-    <div className={classes.cartList}>
+    <div className={classes.cart}>
       <h1>Hello from Cart</h1>
       <ResetButton />
-      <CartCardComponent petList={petListurchased} />
+      <div className={classes.component}>
+        <CartCardComponent petList={petListurchased} />
+      </div>
     </div>
   );
 };
