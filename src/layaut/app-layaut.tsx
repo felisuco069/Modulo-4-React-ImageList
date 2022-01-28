@@ -19,7 +19,7 @@ const appUseStyles = makeStyles(() => ({
     borderRight: "3px solid black;",
     boxSizing: "border-box",
   },
-  cart: {
+  cartContainer: {
     width: "40vw",
     boxSizing: "border-box",
   },
@@ -35,7 +35,7 @@ export const AppLayaut = ({ children }) => {
       </header>
       <div className={classes.container}>
         <main className={classes.main}>{children}</main>
-        <div className={classes.cart}>
+        <div className={classes.cartContainer}>
           <CartScene />
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { GetCard } from "commonApp/components/getCard";
-import { PictureInfo } from "pods/dogs/api/api.model";
+import { PictureInfo } from "./pet.Model";
 
 interface Props {
   petList: PictureInfo[];

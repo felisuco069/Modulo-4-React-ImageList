@@ -3,9 +3,11 @@ import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 import { makeStyles } from "@material-ui/core/styles";
+import DeleteIcon from "@material-ui/icons/Delete";
+import IconButton from "@material-ui/core/IconButton";
 
 import { MyContext } from "core/myContext";
-import { PictureInfo } from "./pet.Model";
+import { PictureInfo } from "commonApp/components/pet.Model";
 
 interface Props {
   pet: PictureInfo;
@@ -13,8 +15,11 @@ interface Props {
 
 const cardUseStyles = makeStyles(() => ({
   root: {
-    width: 345,
+    width: "200px",
     margin: "12px",
+    "& span": {
+      fontSize: "1rem",
+    },
   },
   media: {
     height: 0,
@@ -32,9 +37,12 @@ const cardUseStyles = makeStyles(() => ({
     flexDirection: "row",
     alignItems: "center",
   },
+  margin: {
+    margin: "12px",
+  },
 }));
 
-export const GetCard = (props: Props) => {
+export const GetCardCart = (props: Props) => {
   const { pet } = props;
   const { cartList, setCartList, petListurchased, setPetListCurchased } =
     React.useContext(MyContext);
@@ -42,23 +50,23 @@ export const GetCard = (props: Props) => {
   const classes = cardUseStyles();
 
   const handleClick = () => {
-    if (!pet.selected) {
-      setCartList([...cartList, pet.id]);
-      setPetListCurchased([...petListurchased, pet]);
-    } else {
-      const newArrayIds = cartList.filter((elem) => elem !== pet.id);
-      const newPetsArray = petListurchased.filter((elem) => elem.id !== pet.id);
-      setCartList(newArrayIds);
-      setPetListCurchased(newPetsArray);
-    }
+    const newArrayIds = cartList.filter((elem) => elem !== pet.id);
+    const newPetsArray = petListurchased.filter((elem) => elem.id !== pet.id);
+    setCartList(newArrayIds);
+    setPetListCurchased(newPetsArray);
   };
 
   return (
-    <Card className={classes.root} key={pet.id}>
+    <Card className={classes.root}>
       <div className={classes.title}>
+        <IconButton
+          aria-label="delete"
+          className={classes.margin}
+          onClick={handleClick}
+        >
+          <DeleteIcon />
+        </IconButton>
         <CardHeader title={pet.title} />
-        <input type="checkbox" checked={pet.selected} onChange={handleClick} />
-        <span>Buy</span>
       </div>
       <CardMedia
         className={classes.media}

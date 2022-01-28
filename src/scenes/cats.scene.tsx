@@ -1,4 +1,4 @@
-import { CatListContainer } from "pods/cats/cat.container";
+import { CatListContainer } from "pods/cats/cat.list.container";
 import React from "react";
 
 export const CatsScene: React.FC = () => {

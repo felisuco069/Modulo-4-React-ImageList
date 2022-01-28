@@ -4,26 +4,23 @@ import { Context, PictureInfo } from "./context.model";
 export const MyContext = React.createContext<Context>({
   cartList: [],
   setCartList: (value) => {},
-  dogList: [],
-  setDogList: (value) => {},
-  catList: [],
-  setCatList: (value) => {},
+  petListurchased: [],
+  setPetListCurchased: (value) => {},
 });
 
 export const MyContextProvider: React.FC = ({ children }) => {
-  const [cartList, setCartList] = React.useState<PictureInfo[]>([]);
-  const [dogList, setDogList] = React.useState<PictureInfo[]>([]);
-  const [catList, setCatList] = React.useState<PictureInfo[]>([]);
+  const [cartList, setCartList] = React.useState<string[]>([]);
+  const [petListurchased, setPetListCurchased] = React.useState<PictureInfo[]>(
+    []
+  );
 
   return (
     <MyContext.Provider
       value={{
         cartList,
         setCartList,
-        dogList,
-        setDogList,
-        catList,
-        setCatList,
+        petListurchased,
+        setPetListCurchased,
       }}
     >
       {children}

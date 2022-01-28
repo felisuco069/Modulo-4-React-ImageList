@@ -1,4 +1,4 @@
-import { PictureInfo } from "./api.model";
+import { PictureInfo } from "commonApp/components/pet.Model";
 
 const url = `${process.env.API_BASE_URL}`;
 

@@ -1,7 +1,9 @@
 import React from "react";
-import { MyContext } from "core/myContext";
 import { makeStyles } from "@material-ui/core/styles";
-import { PetsListComponent } from "commonApp/components/pet.list.component";
+
+import { MyContext } from "core/myContext";
+import { CartCardComponent } from "./cartCardComponent";
+import { ResetButton } from "./reset.button";
 
 const carttUseStyles = makeStyles(() => ({
   cartList: {
@@ -12,13 +14,15 @@ const carttUseStyles = makeStyles(() => ({
 }));
 
 export const CartListContainer = () => {
-  const { cartList } = React.useContext(MyContext);
+  const { petListurchased } = React.useContext(MyContext);
 
   const classes = carttUseStyles();
 
   return (
     <div className={classes.cartList}>
-      <PetsListComponent petList={cartList} />
+      <h1>Hello from Cart</h1>
+      <ResetButton />
+      <CartCardComponent petList={petListurchased} />
     </div>
   );
 };

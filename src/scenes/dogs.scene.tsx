@@ -1,5 +1,5 @@
 import React from "react";
-import { DogListContainer } from "pods/dogs/dog.container";
+import { DogListContainer } from "pods/dogs/dog.list.container";
 
 export const DogsScene: React.FC = () => {
   return (
