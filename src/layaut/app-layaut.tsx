@@ -1,8 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
-import { HeaderPage } from "commonApp/components/header.page";
+import { HeaderPage } from "layaut/header.page";
 import { CartScene } from "scenes/cart.scene";
+import { MyContext } from "core/myContext";
 
 const appUseStyles = makeStyles(() => ({
   root: {
@@ -12,17 +13,11 @@ const appUseStyles = makeStyles(() => ({
   container: {
     display: "flex",
   },
-  main: {
-    borderRight: "3px solid black;",
-    boxSizing: "border-box",
-  },
-  cartContainer: {
-    width: "180vw",
-    boxSizing: "border-box",
-  },
 }));
 
 export const AppLayaut = ({ children }) => {
+  const { visible } = React.useContext(MyContext);
+
   const classes = appUseStyles();
 
   return (
@@ -31,10 +26,8 @@ export const AppLayaut = ({ children }) => {
         <HeaderPage />
       </header>
       <div className={classes.container}>
-        <main className={classes.main}>{children}</main>
-        <div className={classes.cartContainer}>
-          <CartScene />
-        </div>
+        <main>{children}</main>
+        {visible ? <CartScene /> : <></>}
       </div>
     </div>
   );

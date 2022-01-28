@@ -10,4 +10,6 @@ export interface Context {
   setCartList: (value: string[]) => void;
   petListurchased: PictureInfo[];
   setPetListCurchased: (value: PictureInfo[]) => void;
+  visible: boolean;
+  setVisible: (value: boolean) => void;
 }

@@ -9,6 +9,8 @@ const PetContainerStyle = makeStyles(() => ({
   container: {
     display: "flex",
     flexWrap: "wrap",
+    height: "max-content",
+    borderRight: "3px solid black;",
   },
 }));
 
@@ -34,7 +36,7 @@ export const CatListContainer: React.FC = () => {
 
   return (
     <div className={classes.container}>
-      <PetsListComponent petList={catList} />;
+      <PetsListComponent petList={catList} />
     </div>
   );
 };

@@ -6,10 +6,13 @@ export const MyContext = React.createContext<Context>({
   setCartList: (value) => {},
   petListurchased: [],
   setPetListCurchased: (value) => {},
+  visible: true,
+  setVisible: (value) => {},
 });
 
 export const MyContextProvider: React.FC = ({ children }) => {
   const [cartList, setCartList] = React.useState<string[]>([]);
+  const [visible, setVisible] = React.useState<boolean>(true);
   const [petListurchased, setPetListCurchased] = React.useState<PictureInfo[]>(
     []
   );
@@ -21,6 +24,8 @@ export const MyContextProvider: React.FC = ({ children }) => {
         setCartList,
         petListurchased,
         setPetListCurchased,
+        visible,
+        setVisible,
       }}
     >
       {children}

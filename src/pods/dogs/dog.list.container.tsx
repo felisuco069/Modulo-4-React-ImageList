@@ -10,6 +10,8 @@ const PetContainerStyle = makeStyles(() => ({
   container: {
     display: "flex",
     flexWrap: "wrap",
+    height: "max-content",
+    borderRight: "3px solid black;",
   },
 }));
 

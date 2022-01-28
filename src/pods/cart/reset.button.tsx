@@ -8,6 +8,7 @@ const useStyles = makeStyles(() =>
   createStyles({
     button: {
       margin: "24px 0",
+      fontSize: "0.5rem",
     },
   })
 );

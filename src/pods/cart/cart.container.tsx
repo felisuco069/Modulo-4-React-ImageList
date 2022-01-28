@@ -10,6 +10,10 @@ const carttUseStyles = makeStyles(() => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    // borderLeft: "3px solid black;",
+    width: "35vw",
+    height: "100vh",
+    boxSizing: "border-box",
   },
   component: {
     display: "flex",
