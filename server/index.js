@@ -1,150 +1,166 @@
-{
-  "dogsList": [
+const express = require('express');
+const path = require('path');
+
+const app = express();
+// const staticFilesPath = path.resolve(__dirname, process.env.STATIC_FILES_PATH);
+const staticFilesPath = path.resolve(__dirname, './public');
+app.use('/', express.static(staticFilesPath));
+
+app.use("/dogsList", async (req, res) => {
+  res.send([
     {
       "id": 1,
-      "picUrl": "/assets/images/bulldog-ingles.jpg",
+      "picUrl": "/images/bulldog-ingles.jpg",
       "title": "Bulldog Ingles",
       "selected": false
     },
     {
       "id": 2,
-      "picUrl": "/assets/images/caniche.jpg",
+      "picUrl": "/images/caniche.jpg",
       "title": "Caniche",
       "selected": false
     },
     {
       "id": 3,
-      "picUrl": "/assets/images/chihuahua.jpg",
+      "picUrl": "/images/chihuahua.jpg",
       "title": "Chihuahua",
       "selected": false
     },
     {
       "id": 4,
-      "picUrl": "/assets/images/Chow_Chow.jpg",
+      "picUrl": "/images/Chow_Chow.jpg",
       "title": "Chow-Chow",
       "selected": false
     },
     {
       "id": 5,
-      "picUrl": "/assets/images/doberman.jpg",
+      "picUrl": "/images/doberman.jpg",
       "title": "Doberman",
       "selected": false
     },
     {
       "id": 6,
-      "picUrl": "/assets/images/husky-m.jpg",
+      "picUrl": "/images/husky-m.jpg",
       "title": "Husky",
       "selected": false
     },
     {
       "id": 7,
-      "picUrl": "/assets/images/Labrador retriever.jpg",
+      "picUrl": "/images/Labrador retriever.jpg",
       "title": "Labrador Retriever",
       "selected": false
     },
     {
       "id": 8,
-      "picUrl": "/assets/images/Pastor aleman.jpg",
+      "picUrl": "/images/Pastor aleman.jpg",
       "title": "Pastor Aleman",
       "selected": false
     },
     {
       "id": 9,
-      "picUrl": "/assets/images/pomerania.jpg",
+      "picUrl": "/images/pomerania.jpg",
       "title": "Pomerania",
       "selected": false
     },
     {
       "id": 10,
-      "picUrl": "/assets/images/Rottweiler.jpg",
+      "picUrl": "/images/Rottweiler.jpg",
       "title": "Rottweiler",
       "selected": false
     },
     {
       "id": 11,
-      "picUrl": "/assets/images/shih_tzu.jpg",
+      "picUrl": "/images/shih_tzu.jpg",
       "title": "Shih Tzu",
       "selected": false
     },
     {
       "id": 12,
-      "picUrl": "/assets/images/Short-haired-Dachshund.jpg",
+      "picUrl": "/images/Short-haired-Dachshund.jpg",
       "title": "Dachshund",
       "selected": false
     }
-  ],
-  "catsList": [
+  ]);
+});
+
+app.use("/catsList", async (req, res) => {
+  res.send([
     {
       "id": 13,
-      "picUrl": "/assets/images/Egyptian Mau.jpg",
+      "picUrl": "/images/Egyptian Mau.jpg",
       "title": "Egyptian Mau",
       "selected": false
     },
     {
       "id": 14,
-      "picUrl": "/assets/images/gato balinés.jpg",
+      "picUrl": "/images/gato balinés.jpg",
       "title": "Gato Balinés",
       "selected": false
     },
     {
       "id": 15,
-      "picUrl": "/assets/images/gato ragdoll.jpg",
+      "picUrl": "/images/gato ragdoll.jpg",
       "title": "Gato Ragdoll",
       "selected": false
     },
     {
       "id": 16,
-      "picUrl": "/assets/images/gato_esfinge.jpg",
+      "picUrl": "/images/gato_esfinge.jpg",
       "title": "Gato Esfinge",
       "selected": false
     },
     {
       "id": 17,
-      "picUrl": "/assets/images/gato-bosque-de-Noruega.jpg",
+      "picUrl": "/images/gato-bosque-de-Noruega.jpg",
       "title": "Gato Bosque De Noruega",
       "selected": false
     },
     {
       "id": 18,
-      "picUrl": "/assets/images/gato-devon-rex.jpg",
+      "picUrl": "/images/gato-devon-rex.jpg",
       "title": "Gato Devon Rex",
       "selected": false
     },
     {
       "id": 19,
-      "picUrl": "/assets/images/gato-exotico.jpg",
+      "picUrl": "/images/gato-exotico.jpg",
       "title": "Gato Exótico",
       "selected": false
     },
     {
       "id": 20,
-      "picUrl": "/assets/images/gato-habana.jpg",
+      "picUrl": "/images/gato-habana.jpg",
       "title": "Gato Habana",
       "selected": false
     },
     {
       "id": 21,
-      "picUrl": "/assets/images/gato-himalayo.jpg",
+      "picUrl": "/images/gato-himalayo.jpg",
       "title": "Gato Himalayo",
       "selected": false
     },
     {
       "id": 22,
-      "picUrl": "/assets/images/gato-manx.jpg",
+      "picUrl": "/images/gato-manx.jpg",
       "title": "Gato Manx",
       "selected": false
     },
     {
       "id": 23,
-      "picUrl": "/assets/images/gato-somalí.jpg",
+      "picUrl": "/images/gato-somalí.jpg",
       "title": "Gato Somalí",
       "selected": false
     },
     {
       "id": 24,
-      "picUrl": "/assets/images/oriental pelo corto.jpg",
+      "picUrl": "/images/oriental pelo corto.jpg",
       "title": "Gato Oriental Pelo Corto",
       "selected": false
     }
-  ]
-}
+  ]);
+});
+
+const PORT = process.env.PORT || 8081;
+app.listen(PORT, () => {
+  console.log(`App running on http://localhost:${PORT}`);
+});

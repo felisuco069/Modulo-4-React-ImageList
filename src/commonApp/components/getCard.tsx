@@ -6,7 +6,9 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import { MyContext } from "core/myContext";
 import { PictureInfo } from "./pet.Model";
+import * as petImage from "assets";
 
+const isProducction = process.env.NODE_ENV === "production";
 interface Props {
   pet: PictureInfo;
 }
@@ -33,7 +35,7 @@ const cardUseStyles = makeStyles(() => ({
     alignItems: "center",
   },
 }));
-
+console.log(petImage);
 export const GetCard = (props: Props) => {
   const { pet } = props;
   const { cartList, setCartList, petListurchased, setPetListCurchased } =
@@ -62,7 +64,7 @@ export const GetCard = (props: Props) => {
       </div>
       <CardMedia
         className={classes.media}
-        image={pet.picUrl}
+        image={isProducction ? petImage[`id${pet.id}`] : pet.picUrl}
         title={pet.title}
       />
     </Card>
